@@ -1,29 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="ru">
+
 <head>
   <meta charset="utf-8">
-  <base href="/">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>six cities simple</title>
-  <link rel="stylesheet" href="css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Звук гитары</title>
+  <link rel="icon" href="img/guitar-ico.png" type="image/x-icon">
+  <link rel="preload" href="/fonts/PlayfairDisplay-Black.woff2" as="font">
+  <link rel="preload" href="/fonts/ptsansbold.woff2" as="font">
+  <link href="css/styles.min.css" rel="stylesheet">
 </head>
 
-<body>
-  <div style="display: none">
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <symbol id="icon-arrow-select" viewbox="0 0 7 4">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0l3.5 2.813L7 0v1.084L3.5 4 0 1.084V0z"></path>
-      </symbol>
-      <symbol id="icon-bookmark" viewbox="0 0 17 18">
-        <path d="M3.993 2.185l.017-.092V2c0-.554.449-1 .99-1h10c.522 0 .957.41.997.923l-2.736 14.59-4.814-2.407-.39-.195-.408.153L1.31 16.44 3.993 2.185z"></path>
-      </symbol>
-      <symbol id="icon-star" viewbox="0 0 13 12">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 9.644L10.517 12 9.451 7.56 13 4.573l-4.674-.386L6.5 0 4.673 4.187 0 4.573 3.549 7.56 2.483 12 6.5 9.644z"></path>
-      </symbol>
-    </svg>
-  </div>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+<body class="page__body body">
+
+  <header class="body__header header">
+    <nav class="footer__menu menu">
+      <ul class="menu__menu-list menu-list">
+        <!-- <li class="menu-list__menu-item menu-item menu-item--not-active">
+          <a href="index.html">Главная</a>
+        </li> -->
+      </ul>
+    </nav>
+    <div class="header__intro intro">
+      <div class="intro-photo-wrapper">
+        <img class="intro-picture-1" src="img/guitar.webp" alt="Гитара">
+      </div>
+      <div class="intro-content">
+        <h3 class="intro-description">Не всё то музыка, что звучит</h3>
+        <h2 class="intro-name">Звук<br>гитары</h2>
+        <h1 class="intro-name visually-hidden">Катровский Роман</h1>
+        <button type="button" class="intro-hobby button">Контакты</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page__main main">
+    <section class="main__records records">
+      <h2 class="records-title main-big-title">Записи.</h2>
+      <!--<h3 class="main-info-top">Не стреляйте в гитариста, он играет как может...</h3> -->
+      <div class="records__records-list records-list">
+
+        <section class="records-list__composition composition">
+          <h3 class="composition-band main-middle-title">Ozzy O. & Randy R.</h3>
+          <p class="composition-title">Goodbye To Romance</p>
+          <video class="composition-video" controls preload="none" poster="img/compositions/ozzy-osbourne.webp">
+            <source src="records/GoodbyeToRomance.webm" type="video/webm">
+          </video>
+          <p class="composition-date visually-hidden">27 августа 2023</p>
+        </section>
+
+          <section class="records-list__composition composition">
+          <h3 class="composition-band main-middle-title">Joe Zawinul</h3>
+          <p class="composition-title">Mercy Mercy Mercy</p>
+          <video class="composition-video" controls preload="none" poster="img/compositions/joe-zawinul.webp">
+            <source src="records/MercyMercyMercy.webm" type="video/webm">
+          </video>
+          <p class="composition-date visually-hidden">08 июля 2023</p>
+        </section>
+
+        <section class="records-list__composition composition">
+          <h3 class="composition-band main-middle-title">Ray Charles</h3>
+          <p class="composition-title">Hit The Road Jack</p>
+          <video class="composition-video" controls preload="none" poster="img/compositions/ray-charles.webp">
+            <source src="records/HitTheRoadJack.webm" type="video/webm">
+          </video>
+          <p class="composition-date visually-hidden">08 июля 2023</p>
+        </section>
+
+        <section class="records-list__composition composition">
+          <h3 class="composition-band main-middle-title">Queen</h3>
+          <p class="composition-title">Bohemian Rhapsody</p>
+          <video class="composition-video" controls preload="none" poster="img/compositions/queen.webp">
+            <source src="records/BohemianRhapsody.webm" type="video/webm">
+          </video>
+          <p class="composition-date visually-hidden">19 августа 2022</p>
+        </section>
+
+        <section class="records-list__composition composition">
+          <h3 class="composition-band main-middle-title">Lalo Schifrin</h3>
+          <p class="composition-title">Mission Impossible</p>
+          <video class="composition-video" controls preload="none" poster="img/compositions/lalo-schifrin.webp">
+            <source src="records/MissionImpossible.webm" type="video/webm">
+          </video>
+          <p class="composition-date visually-hidden">16 сентября 2022</p>
+        </section>
+
+        <section class="records-list__composition composition">
+          <h3 class="composition-band main-middle-title">Pink Floyd</h3>
+          <p class="composition-title">Shine On You Crazy Diamond (Part V)</p>
+          <video class="composition-video" controls preload="none" poster="img/compositions/pink-floyd.webp">
+            <source src="records/ShineOnYouCrazyDiamond.webm" type="video/webm">
+          </video>
+          <p class="composition-date visually-hidden">11 ноября 2022</p>
+        </section>
+
+        <section class="records-list__composition composition">
+          <h3 class="composition-band main-middle-title">Europe</h3>
+          <p class="composition-title">The Final Countdown</p>
+          <video class="composition-video" controls preload="none" poster="img/compositions/europe.webp">
+            <source src="records/TheFinalCountdown.webm" type="video/webm">
+          </video>
+          <p class="composition-date visually-hidden">11 октября 2022</p>
+        </section>
+
+        <section class="records-list__composition composition">
+          <h3 class="composition-band main-middle-title">Scorpions</h3>
+          <p class="composition-title">Still Loving You</p>
+          <video class="composition-video" controls preload="none" poster="img/compositions/scorpions.webp">
+            <source src="records/StillLovingYou.webm" type="video/webm">
+          </video>
+          <p class="composition-date visually-hidden">24 сентября 2022</p>
+        </section>
+
+      </div>
+      <!---<h3 class="main-info-bottom">Аранжировки от Kelly Valleau</h3> -->
+    </section>
+
+  </main>
+
+  <footer class="body__footer footer footer--hobby">
+    <h4 class="footer-title">Контакты</h4>
+    <img class="footer-contact" src="img/contacts.webp" alt="Картинка с е-мейлом">
+
+    <div class="footer__social social">
+      <ul class="social-list">
+        <li class="social-item social-item--ok">
+          <a href="https://ok.ru/profile/128961659910" aria-label="одноклассники" class="">
+            <img src="img/ok.svg" width="50" height="50" alt="иконка одноклассники">
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://vk.ru/id78931741" aria-label="в контакте" class="">
+            <img src="img/vk.svg" width="50" height="50" alt="иконка в контакте">
+          </a>
+        </li><!---
+        <li class="social-item">
+          <a href="https://www.youtube.com/channel/UCSq7sH-ipBVB6P_keFVFg4g/playlists" aria-label="youtube" class="">
+            <img src="img/youtube.svg" width="50" height="50" alt="иконка youtube">
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://github.com/RomanBass" aria-label="github" class="">
+            <img src="img/github.svg" width="50" height="50" alt="иконка гитхаб">
+          </a>
+        </li> -->
+      </ul>
+    </div>
+
+    <nav class="footer__menu menu">
+      <ul class="menu__menu-list menu-list">
+        <!-- <li class="menu-list__menu-item menu-item menu-item--not-active">
+          <a href="index.html">Главная</a>
+        </li> -->
+      </ul>
+    </nav>
+  </footer>
+
+  <button type="button" class="button button--up">
+    <img src="img/rocket.png" width="100" height="100">
+  </button>
+
+  <script src="./js/main.bundle.js"></script>
+
 </body>
+
 </html>
