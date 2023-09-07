@@ -10,7 +10,7 @@
 
 # production
 /build
-/project/public/records
+/public/records
 
 # misc
 Thumbs.db
