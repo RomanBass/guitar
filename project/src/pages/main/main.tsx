@@ -11,8 +11,8 @@ function Main(): JSX.Element {
             <img className="intro-picture-1" src="img/guitar.webp" alt="Гитара" />
           </div>
           <div className="intro-content">
-            <h3 className="intro-description">Не всё то музыка, что звучит</h3>
-            <h2 className="intro-name">Звук<br />гитары</h2>
+            <h3 className="intro-description">Катровский & G</h3>
+            <h2 className="intro-name">Гитарные<br/>вечера</h2>
             <h1 className="intro-name visually-hidden">Катровский Роман</h1>
             <button type="button" className="intro-hobby button">Контакты</button>
           </div>
@@ -21,7 +21,7 @@ function Main(): JSX.Element {
 
       <main className="page__main main">
         <section className="main__records records">
-          <h2 className="records-title main-big-title">Записи.</h2>
+          <h2 className="records-title main-big-title">Композиции.</h2>
           <div className="records__records-list records-list">
 
             <section className="records-list__composition composition">
