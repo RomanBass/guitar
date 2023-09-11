@@ -1,5 +1,3 @@
-const contactsSection = document.querySelector('.footer');
-
 function Main(): JSX.Element {
   return (
     <div>
@@ -16,15 +14,18 @@ function Main(): JSX.Element {
             <h3 className="intro-description">Катровский & G</h3>
             <h2 className="intro-name">Гитарные<br/>вечера</h2>
             <h1 className="intro-name visually-hidden">Катровский Роман</h1>
+
             <button
               onClick={() => {
+                const contactsSection = document.querySelector('.footer');
                 if (contactsSection) {
                   contactsSection.scrollIntoView({ behavior: 'smooth' });
                 }}}
-              type="button" className="intro-hobby button"
-            >
-              Контакты
+              type="button"
+              className="intro-hobby button"
+            >Контакты
             </button>
+
           </div>
         </div>
       </header>
