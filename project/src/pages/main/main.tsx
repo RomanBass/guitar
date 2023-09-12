@@ -1,4 +1,15 @@
+import { RefObject, useRef } from 'react';
+
 function Main(): JSX.Element {
+
+  //реализуется функционал кнопки КОНТАКТЫ
+  const contactsRef: RefObject<HTMLElement> = useRef(null);
+  const scrollToContacts = () => {
+    if (contactsRef.current) {
+      contactsRef.current.scrollIntoView({behavior: 'smooth'});
+    }};
+  //\\
+
   return (
     <div>
       <header className="body__header header">
@@ -16,11 +27,7 @@ function Main(): JSX.Element {
             <h1 className="intro-name visually-hidden">Катровский Роман</h1>
 
             <button
-              onClick={() => {
-                const contactsSection = document.querySelector('.footer');
-                if (contactsSection) {
-                  contactsSection.scrollIntoView({ behavior: 'smooth' });
-                }}}
+              onClick={scrollToContacts}
               type="button"
               className="intro-hobby button"
             >Контакты
@@ -113,7 +120,7 @@ function Main(): JSX.Element {
 
       </main>
 
-      <footer className="body__footer footer footer--hobby">
+      <footer ref={contactsRef} className="body__footer footer footer--hobby">
         <h4 className="footer-title">Контакты</h4>
         <img className="footer-contact" src="img/contacts.webp" alt="Картинка с е-мейлом" />
 
