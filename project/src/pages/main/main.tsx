@@ -1,18 +1,52 @@
-import { RefObject, useRef } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 
 function Main(): JSX.Element {
 
-  //реализуется функционал кнопки КОНТАКТЫ
+  //скрытие кнопки ВВЕРХ, в зависимости от прокрутки окна
+  const [scrollPosition, setScrollPosition] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollPosition]); //---
+
+  //осветление кнопки ВВЕРХ при наведении мыши
+  const upButtonRef: RefObject<HTMLButtonElement> = useRef(null);
+  const fadeUpButton = () => {
+    if (upButtonRef.current && scrollPosition > 100) {
+      upButtonRef.current.style.opacity = '0.7';
+    }
+  };
+  const lightenUpButton = () => {
+    if (upButtonRef.current && scrollPosition > 100) {
+      upButtonRef.current.style.opacity = '1';
+    }
+  }; //---
+
+  //функционал кнопки ВВЕРХ
+  const headerRef: RefObject<HTMLHeadElement> = useRef(null);
+  const scrollToTop = () => {
+    if (headerRef.current) {
+      headerRef.current.scrollIntoView({behavior: 'smooth'});
+    }
+  }; //---
+
+  //функционал кнопки КОНТАКТЫ
   const contactsRef: RefObject<HTMLElement> = useRef(null);
   const scrollToContacts = () => {
     if (contactsRef.current) {
       contactsRef.current.scrollIntoView({behavior: 'smooth'});
-    }};
-  //\\
+    }
+  }; //---
 
   return (
     <div>
-      <header className="body__header header">
+      <header className="body__header header" ref={headerRef}>
         <nav className="footer__menu menu">
           <ul className="menu__menu-list menu-list">
           </ul>
@@ -22,8 +56,8 @@ function Main(): JSX.Element {
             <img className="intro-picture-1" src="img/guitar.webp" alt="Гитара" />
           </div>
           <div className="intro-content">
-            <h3 className="intro-description">Катровский & G</h3>
-            <h2 className="intro-name">Гитарные<br/>вечера</h2>
+            <h3 className="intro-description">2021 - 2023</h3>
+            <h2 className="intro-name">Гитарная<br/>разминка</h2>
             <h1 className="intro-name visually-hidden">Катровский Роман</h1>
 
             <button
@@ -145,7 +179,16 @@ function Main(): JSX.Element {
         </nav>
       </footer>
 
-      <button type="button" className="button button--up">
+      <button
+        type="button"
+        className="button button--up"
+        style={{opacity: scrollPosition > 100 ? 1 : 0,
+          cursor: scrollPosition > 100 ? 'pointer' : 'auto'}} //видимость кнопки в зависимости от прокрутки окна
+        onClick={scrollToTop}
+        onMouseEnter={fadeUpButton}
+        onMouseLeave={lightenUpButton}
+        ref={upButtonRef}
+      >
         <img src="img/rocket.png" width="100" height="100" alt="ракетка" />
       </button>
 
