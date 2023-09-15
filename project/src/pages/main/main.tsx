@@ -1,4 +1,5 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
+import Composition from '../../components/composition/composition';
 
 function Main(): JSX.Element {
 
@@ -75,6 +76,10 @@ function Main(): JSX.Element {
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции.</h2>
           <div className="records__records-list records-list">
+
+            <Composition/>
+            <Composition/>
+            <Composition/>
 
             <section className="records-list__composition composition">
               <h3 className="composition-band main-middle-title">Ozzy O. & Randy R.</h3>

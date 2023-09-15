@@ -39,7 +39,7 @@ function NotFound(): JSX.Element {
 
       <main className="page__main main">
         <section className="main__records records">
-          <h2 className="records-title main-big-title">Композиции.</h2>
+          <h2 className="records-title main-big-title" style={{color: 'red'}}>Страница не найдена.</h2>
         </section>
       </main>
 
