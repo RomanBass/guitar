@@ -1,6 +1,40 @@
-import { RefObject, useRef } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 
 function NotFound(): JSX.Element {
+
+  //скрытие кнопки ВВЕРХ, в зависимости от прокрутки окна
+  const [scrollPosition, setScrollPosition] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollPosition]); //---
+
+  //осветление кнопки ВВЕРХ при наведении мыши
+  const upButtonRef: RefObject<HTMLButtonElement> = useRef(null);
+  const fadeUpButton = () => {
+    if (upButtonRef.current && scrollPosition > 100) {
+      upButtonRef.current.style.opacity = '0.7';
+    }
+  };
+  const lightenUpButton = () => {
+    if (upButtonRef.current && scrollPosition > 100) {
+      upButtonRef.current.style.opacity = '1';
+    }
+  }; //---
+
+  //функционал кнопки ВВЕРХ
+  const headerRef: RefObject<HTMLHeadElement> = useRef(null);
+  const scrollToTop = () => {
+    if (headerRef.current) {
+      headerRef.current.scrollIntoView({behavior: 'smooth'});
+    }
+  }; //---
 
   //функционал кнопки КОНТАКТЫ
   const contactsRef: RefObject<HTMLElement> = useRef(null);
@@ -39,7 +73,7 @@ function NotFound(): JSX.Element {
 
       <main className="page__main main">
         <section className="main__records records">
-          <h2 className="records-title main-big-title" style={{color: 'red'}}>Страница не найдена.</h2>
+          <h2 className="records-title main-big-title">Страница не найдена.</h2>
         </section>
       </main>
 
@@ -68,7 +102,20 @@ function NotFound(): JSX.Element {
         </nav>
       </footer>
 
-    </div>
+      <button
+        type="button"
+        className="button button--up"
+        style={{opacity: scrollPosition > 100 ? 1 : 0,
+          cursor: scrollPosition > 100 ? 'pointer' : 'auto'}} //видимость кнопки в зависимости от прокрутки окна
+        onClick={scrollToTop}
+        onMouseEnter={fadeUpButton}
+        onMouseLeave={lightenUpButton}
+        ref={upButtonRef}
+      >
+        <img src="img/rocket.png" width="100" height="100" alt="ракетка" />
+      </button>
+
+    </div >
   );
 }
 
