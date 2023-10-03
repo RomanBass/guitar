@@ -1,5 +1,6 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
-import Composition from '../../components/composition/composition';
+//import Composition from '../../components/composition/composition';
+import CompositionsList from '../../components/compositions-list/compositions-list';
 
 function Main(): JSX.Element {
 
@@ -75,88 +76,8 @@ function Main(): JSX.Element {
       <main className="page__main main">
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции.</h2>
-          <div className="records__records-list records-list">
-
-            <Composition/>
-            <Composition/>
-            <Composition/>
-
-            <section className="records-list__composition composition">
-              <h3 className="composition-band main-middle-title">Ozzy O. & Randy R.</h3>
-              <p className="composition-title">Goodbye To Romance</p>
-              <video className="composition-video" controls preload="none" poster="img/compositions/ozzy-osbourne.webp">
-                <source src="records/GoodbyeToRomance.webm" type="video/webm" />
-              </video>
-              <p className="composition-date visually-hidden">27 августа 2023</p>
-            </section>
-
-            <section className="records-list__composition composition">
-              <h3 className="composition-band main-middle-title">Joe Zawinul</h3>
-              <p className="composition-title">Mercy Mercy Mercy</p>
-              <video className="composition-video" controls preload="none" poster="img/compositions/joe-zawinul.webp">
-                <source src="records/MercyMercyMercy.webm" type="video/webm" />
-              </video>
-              <p className="composition-date visually-hidden">08 июля 2023</p>
-            </section>
-
-            <section className="records-list__composition composition">
-              <h3 className="composition-band main-middle-title">Ray Charles</h3>
-              <p className="composition-title">Hit The Road Jack</p>
-              <video className="composition-video" controls preload="none" poster="img/compositions/ray-charles.webp">
-                <source src="records/HitTheRoadJack.webm" type="video/webm" />
-              </video>
-              <p className="composition-date visually-hidden">08 июля 2023</p>
-            </section>
-
-            <section className="records-list__composition composition">
-              <h3 className="composition-band main-middle-title">Queen</h3>
-              <p className="composition-title">Bohemian Rhapsody</p>
-              <video className="composition-video" controls preload="none" poster="img/compositions/queen.webp">
-                <source src="records/BohemianRhapsody.webm" type="video/webm" />
-              </video>
-              <p className="composition-date visually-hidden">19 августа 2022</p>
-            </section>
-
-            <section className="records-list__composition composition">
-              <h3 className="composition-band main-middle-title">Lalo Schifrin</h3>
-              <p className="composition-title">Mission Impossible</p>
-              <video className="composition-video" controls preload="none" poster="img/compositions/lalo-schifrin.webp">
-                <source src="records/MissionImpossible.webm" type="video/webm" />
-              </video>
-              <p className="composition-date visually-hidden">16 сентября 2022</p>
-            </section>
-
-            <section className="records-list__composition composition">
-              <h3 className="composition-band main-middle-title">Pink Floyd</h3>
-              <p className="composition-title">Shine On You Crazy Diamond (Part V)</p>
-              <video className="composition-video" controls preload="none" poster="img/compositions/pink-floyd.webp">
-                <source src="records/ShineOnYouCrazyDiamond.webm" type="video/webm" />
-              </video>
-              <p className="composition-date visually-hidden">11 ноября 2022</p>
-            </section>
-
-            <section className="records-list__composition composition">
-              <h3 className="composition-band main-middle-title">Europe</h3>
-              <p className="composition-title">The Final Countdown</p>
-              <video className="composition-video" controls preload="none" poster="img/compositions/europe.webp">
-                <source src="records/TheFinalCountdown.webm" type="video/webm" />
-              </video>
-              <p className="composition-date visually-hidden">11 октября 2022</p>
-            </section>
-
-            <section className="records-list__composition composition">
-              <h3 className="composition-band main-middle-title">Scorpions</h3>
-              <p className="composition-title">Still Loving You</p>
-              <video className="composition-video" controls preload="none" poster="img/compositions/scorpions.webp">
-                <source src="records/StillLovingYou.webm" type="video/webm" />
-              </video>
-              <p className="composition-date visually-hidden">24 сентября 2022</p>
-            </section>
-
-          </div>
-
+          <CompositionsList/>
         </section>
-
       </main>
 
       <footer ref={contactsRef} className="body__footer footer footer--hobby">

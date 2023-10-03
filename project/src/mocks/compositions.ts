@@ -1,4 +1,4 @@
-import { Composition } from '../types/comosition';
+import { Composition } from '../types/composition';
 
 export const compositions: Composition[] = [
   {
