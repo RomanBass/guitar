@@ -1,6 +1,7 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 //import Composition from '../../components/composition/composition';
 import CompositionsList from '../../components/compositions-list/compositions-list';
+import { compositions } from '../../mocks/compositions';
 
 function Main(): JSX.Element {
 
@@ -76,7 +77,7 @@ function Main(): JSX.Element {
       <main className="page__main main">
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции.</h2>
-          <CompositionsList/>
+          <CompositionsList compositions={compositions}/>
         </section>
       </main>
 

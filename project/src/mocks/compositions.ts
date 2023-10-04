@@ -1,6 +1,6 @@
-import { Composition } from '../types/composition';
+import { CompositionType } from '../types/composition-type';
 
-export const compositions: Composition[] = [
+export const compositions: CompositionType[] = [
   {
     id: 1,
     rating: 2,

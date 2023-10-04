@@ -1,4 +1,4 @@
-export type Composition = {
+export type CompositionType = {
   id: number;
   rating: number;
   author: string;
@@ -9,4 +9,4 @@ export type Composition = {
   data: string;
 }
 
-export type Compositions = Composition[];
+export type CompositionsType = CompositionType[];

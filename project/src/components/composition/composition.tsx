@@ -1,7 +1,7 @@
-import { Composition } from '../../types/composition';
+import { CompositionType} from '../../types/composition-type';
 
 type CompositionProps = {
-  composition: Composition;
+  composition: CompositionType;
 }
 
 function Composition({composition}: CompositionProps): JSX.Element {

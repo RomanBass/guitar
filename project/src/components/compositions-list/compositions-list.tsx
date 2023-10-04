@@ -1,15 +1,15 @@
 import Composition from '../composition/composition';
-import { Compositions } from '../../types/composition';
+import { CompositionsType } from '../../types/composition-type';
 
 type CompositionsListProps = {
-  compositions: Compositions;
+  compositions: CompositionsType;
 }
 
 
 function CompositionsList({compositions}: CompositionsListProps): JSX.Element {
-  const CompositionsList = compositions.map((composition) => <Composition key={composition.id} composition={composition}/>);
+  const CompositionsItems = compositions.map((composition) => <Composition key={composition.id} composition={composition}/>);
   return (
-    <div className="records__records-list records-list">{CompositionsList}</div>
+    <div className="records__records-list records-list">{CompositionsItems}</div>
   );
 }
 
