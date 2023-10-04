@@ -10,5 +10,6 @@ export const compositions: CompositionType[] = [
     record: 'records/GoodbyeToRomance.webm',
     poster: 'img/compositions/ozzy-osbourne.webp',
     data: '27-08-2023',
+    duration: '05:30'
   }
 ];

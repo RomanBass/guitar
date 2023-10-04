@@ -7,6 +7,7 @@ export type CompositionType = {
   record: string;
   poster: string;
   data: string;
+  duration: string;
 }
 
 export type CompositionsType = CompositionType[];
