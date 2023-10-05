@@ -88,7 +88,7 @@ export const compositions: CompositionType[] = [
   {
     id: 8,
     rating: 1,
-    author: 'Скорпионс',
+    author: 'Скорпионз',
     name: 'Still Loving You',
     genre: 'Рок',
     record: 'records/StillLovingYou.webm',
