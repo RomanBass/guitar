@@ -1,5 +1,4 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
-//import Composition from '../../components/composition/composition';
 import CompositionsList from '../../components/card-list/card-list';
 import { compositions } from '../../mocks/compositions';
 
