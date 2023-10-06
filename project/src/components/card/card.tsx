@@ -1,10 +1,10 @@
-import { CompositionType} from '../../types/composition-type';
+import { Composition} from '../../types/composition';
 
-type CompositionProps = {
-  composition: CompositionType;
+type CardProps = {
+  composition: Composition;
 }
 
-function Composition({composition}: CompositionProps): JSX.Element {
+function Card({composition}: CardProps): JSX.Element {
   return (
     <section className="records-list__composition composition">
       <h3 className="composition-band main-middle-title">{composition.author}</h3>
@@ -17,4 +17,4 @@ function Composition({composition}: CompositionProps): JSX.Element {
   );
 }
 
-export default Composition;
+export default Card;
