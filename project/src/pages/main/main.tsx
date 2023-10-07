@@ -75,7 +75,7 @@ function Main(): JSX.Element {
 
       <main className="page__main main">
         <section className="main__records records">
-          <h2 className="records-title main-big-title">Композиции.</h2>
+          <h2 className="records-title main-big-title">Композиции ({compositions.length}).</h2>
           <CompositionsList compositions={compositions}/>
         </section>
       </main>
