@@ -1,6 +1,12 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function NotFound(): JSX.Element {
+
+  const navigate = useNavigate();
+  const routeToMainHandler = () => {
+    navigate('/');
+  };
 
   //скрытие кнопки ВВЕРХ, в зависимости от прокрутки окна
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -74,7 +80,12 @@ function NotFound(): JSX.Element {
       <main className="page__main main">
         <section className="main__records records">
           <h2 className="records-title main-big-title">404 <br/>Страница не найдена.</h2>
-          <button type="button" className="records__button button button--go-to-main">Вернуться на главную</button>
+          <button
+            type="button"
+            className="records__button button button--go-to-main"
+            onClick={routeToMainHandler}
+          >Вернуться на главную
+          </button>
         </section>
       </main>
 
