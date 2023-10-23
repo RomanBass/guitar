@@ -34,7 +34,7 @@ function Main(): JSX.Element {
   const headerRef: RefObject<HTMLHeadElement> = useRef(null);
   const scrollToTop = () => {
     if (headerRef.current) {
-      headerRef.current.scrollIntoView({behavior: 'smooth'});
+      headerRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }; //---
 
@@ -42,7 +42,7 @@ function Main(): JSX.Element {
   const contactsRef: RefObject<HTMLElement> = useRef(null);
   const scrollToContacts = () => {
     if (contactsRef.current) {
-      contactsRef.current.scrollIntoView({behavior: 'smooth'});
+      contactsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }; //---
 
@@ -59,7 +59,7 @@ function Main(): JSX.Element {
           </div>
           <div className="intro-content">
             <h3 className="intro-description">2021 - 2023</h3>
-            <h2 className="intro-name">Гитарная<br/>разминка</h2>
+            <h2 className="intro-name">Гитарная<br />разминка</h2>
             <h1 className="intro-name visually-hidden">Катровский Роман</h1>
 
             <button
@@ -76,7 +76,23 @@ function Main(): JSX.Element {
       <main className="page__main main">
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции ({compositions.length}).</h2>
-          <CompositionsList compositions={compositions}/>
+
+          <ul className="records__filter filter">
+            <li className="filter__filter-option filter-option">
+              <a href="/" className="filter-option_filter-text filter-text filter-text--active">Все</a>
+            </li>
+            <li className="filter__filter-option filter-option">
+              <a href="/" className="filter-option_filter-text filter-text">Рок</a>
+            </li>
+            <li className="filter__filter-option filter-option">
+              <a href="/" className="filter-option_filter-text filter-text">Джаз</a>
+            </li>
+            <li className="filter__filter-option filter-option">
+              <a href="/" className="filter-option_filter-text filter-text">Классика</a>
+            </li>
+          </ul>
+
+          <CompositionsList compositions={compositions} />
         </section>
       </main>
 
@@ -108,8 +124,10 @@ function Main(): JSX.Element {
       <button
         type="button"
         className="button button--up"
-        style={{opacity: scrollPosition > 100 ? 1 : 0,
-          cursor: scrollPosition > 100 ? 'pointer' : 'auto'}} //видимость кнопки в зависимости от прокрутки окна
+        style={{
+          opacity: scrollPosition > 100 ? 1 : 0,
+          cursor: scrollPosition > 100 ? 'pointer' : 'auto'
+        }} //видимость кнопки в зависимости от прокрутки окна
         onClick={scrollToTop}
         onMouseEnter={fadeUpButton}
         onMouseLeave={lightenUpButton}
