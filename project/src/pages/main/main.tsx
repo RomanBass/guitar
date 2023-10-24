@@ -1,5 +1,6 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 import CompositionsList from '../../components/card-list/card-list';
+import Filter from '../../components/filter/filter';
 import { compositions } from '../../mocks/compositions';
 
 function Main(): JSX.Element {
@@ -76,22 +77,7 @@ function Main(): JSX.Element {
       <main className="page__main main">
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции ({compositions.length}).</h2>
-
-          <ul className="records__filter filter">
-            <li className="filter__filter-option filter-option">
-              <a href="/" className="filter-option_filter-text filter-text filter-text--active">Все</a>
-            </li>
-            <li className="filter__filter-option filter-option">
-              <a href="/" className="filter-option_filter-text filter-text">Рок</a>
-            </li>
-            <li className="filter__filter-option filter-option">
-              <a href="/" className="filter-option_filter-text filter-text">Джаз</a>
-            </li>
-            <li className="filter__filter-option filter-option">
-              <a href="/" className="filter-option_filter-text filter-text">Классика</a>
-            </li>
-          </ul>
-
+          <Filter />
           <CompositionsList compositions={compositions} />
         </section>
       </main>
