@@ -1,11 +1,26 @@
+import { useState } from 'react';
+
 const filterOptions = ['Все', 'Рок', 'Джаз', 'Классика'];
 
 
 function Filter(): JSX.Element {
 
+  const [filterType, setFilterType] = useState('Все');
+
   const filterList = filterOptions.map((filterOption) => (
-    <li value={filterOption} key={filterOption} className="filter__filter-option filter-option">
-      <a href="/" className={`filter-option_filter-text filter-text ${filterOption === 'Рок' ? 'filter-text--active' : ''}`}>{filterOption}</a>
+    <li key={filterOption} className="filter__filter-option filter-option">
+      <a
+        href="/"
+        className={`filter-option_filter-text filter-text ${filterOption === filterType ? 'filter-text--active' : ''}`}
+        data-filter={filterOption}
+        onClick={(evt) => {
+          evt.preventDefault();
+          if (evt.currentTarget.dataset.filter) {
+            setFilterType(evt.currentTarget.dataset.filter);
+          }
+        }}
+      >{filterOption}
+      </a>
     </li>
   ));
 
