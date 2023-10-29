@@ -4,10 +4,6 @@ import CompositionsList from '../../components/card-list/card-list';
 import Filter from '../../components/filter/filter';
 import { compositions } from '../../mocks/compositions';
 
-// type MainProps = {
-//   filter: string;
-// }
-
 function Main(): JSX.Element {
 
   //скрытие кнопки ВВЕРХ, в зависимости от прокрутки окна
@@ -52,7 +48,10 @@ function Main(): JSX.Element {
     }
   }; //---
 
+  const [selectedFilter, setSelectedFilter] = useState('Все');
+
   const filterChangeHandler = (filterOption: string) => {
+    setSelectedFilter(filterOption);
     console.log(filterOption);
     console.log('Main Component');
   };
@@ -87,7 +86,7 @@ function Main(): JSX.Element {
       <main className="page__main main">
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции ({compositions.length}).</h2>
-          <Filter onChangeFilter={filterChangeHandler}/>
+          <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler}/>
           <CompositionsList compositions={compositions} />
         </section>
       </main>
