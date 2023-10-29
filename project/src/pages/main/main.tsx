@@ -1,7 +1,12 @@
+/* eslint-disable no-console */
 import { RefObject, useEffect, useRef, useState } from 'react';
 import CompositionsList from '../../components/card-list/card-list';
 import Filter from '../../components/filter/filter';
 import { compositions } from '../../mocks/compositions';
+
+// type MainProps = {
+//   filter: string;
+// }
 
 function Main(): JSX.Element {
 
@@ -47,6 +52,11 @@ function Main(): JSX.Element {
     }
   }; //---
 
+  const filterChangeHandler = (filterOption: string) => {
+    console.log(filterOption);
+    console.log('Main Component');
+  };
+
   return (
     <div>
       <header className="body__header header" ref={headerRef}>
@@ -77,7 +87,7 @@ function Main(): JSX.Element {
       <main className="page__main main">
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции ({compositions.length}).</h2>
-          <Filter />
+          <Filter onChangeFilter={filterChangeHandler}/>
           <CompositionsList compositions={compositions} />
         </section>
       </main>
