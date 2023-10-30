@@ -7,7 +7,9 @@ type CompositionsListProps = {
 
 
 function CompositionsList({compositions}: CompositionsListProps): JSX.Element {
-  const CompositionsItems = compositions.map((composition) => <Card key={composition.id} composition={composition}/>);
+  const CompositionsItems = compositions.map((composition) =>
+    <Card key={composition.id} composition={composition}/>);
+
   return (
     <div className="records__records-list records-list">{CompositionsItems}</div>
   );

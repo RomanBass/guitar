@@ -52,9 +52,13 @@ function Main(): JSX.Element {
 
   const filterChangeHandler = (filterOption: string) => {
     setSelectedFilter(filterOption);
-    console.log(filterOption);
-    console.log('Main Component');
   };
+
+  let filteredCompositions = compositions;
+
+  if (selectedFilter !== 'Все') {
+    filteredCompositions = compositions.filter((composition) => composition.genre === selectedFilter);
+  }
 
   return (
     <div>
@@ -85,9 +89,9 @@ function Main(): JSX.Element {
 
       <main className="page__main main">
         <section className="main__records records">
-          <h2 className="records-title main-big-title">Композиции ({compositions.length}).</h2>
+          <h2 className="records-title main-big-title">Композиции ({filteredCompositions.length}).</h2>
           <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler}/>
-          <CompositionsList compositions={compositions} />
+          <CompositionsList compositions={filteredCompositions} />
         </section>
       </main>
 
