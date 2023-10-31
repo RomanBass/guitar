@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { RefObject, useEffect, useRef, useState } from 'react';
 import CompositionsList from '../../components/card-list/card-list';
 import Filter from '../../components/filter/filter';
