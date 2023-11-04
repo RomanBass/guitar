@@ -72,7 +72,7 @@ function Main(): JSX.Element {
           </div>
           <div className="intro-content">
             <h3 className="intro-description">Практическое применение</h3>
-            <h2 className="intro-name">Теория<br/>струн</h2>
+            <h2 className="intro-name">Теория<br />струн</h2>
             <h1 className="intro-name visually-hidden">Катровский Роман</h1>
 
             <button
@@ -89,7 +89,19 @@ function Main(): JSX.Element {
       <main className="page__main main">
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции ({filteredCompositions.length}).</h2>
-          <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler}/>
+          <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler} />
+          <div className="records__sorting sorting">
+            <label className="sorting-label" htmlFor="pet-select">Сортировка:</label>
+
+            <select className="sorting-select" name="compositions-list" id="pet-select">
+              <option className="sorting-option" value="composition">По названию композиции</option>
+              <option className="sorting-option sorting-option--active" value="author">По имени автора</option>
+              <option className="sorting-option" value="date-late">По дате записи от ранней</option>
+              <option className="sorting-option" value="date-early">По дате записи от поздней</option>
+              <option className="sorting-option" value="rating">По рейтингу</option>
+            </select>
+          </div>
+
           <CompositionsList compositions={filteredCompositions} />
         </section>
       </main>
