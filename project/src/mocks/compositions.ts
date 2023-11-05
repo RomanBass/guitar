@@ -4,7 +4,7 @@ export const compositions: Composition[] = [
   {
     id: 1,
     rating: 2,
-    author: 'Оззи Осборн',
+    author: 'Ozzy Osbourne',
     name: 'Goodbye To Romance',
     genre: 'Рок',
     record: 'records/GoodbyeToRomance.webm',
@@ -16,7 +16,7 @@ export const compositions: Composition[] = [
   {
     id: 2,
     rating: 3,
-    author: 'Джо Завинул',
+    author: 'Joe Zawinul',
     name: 'Mercy Mercy Mercy',
     genre: 'Джаз',
     record: 'records/MercyMercyMercy.webm',
@@ -28,7 +28,7 @@ export const compositions: Composition[] = [
   {
     id: 3,
     rating: 4,
-    author: 'Перси Мэйфилд',
+    author: 'Percy Mayfield',
     name: 'Hit the Road Jack',
     genre: 'Джаз',
     record: 'records/HitTheRoadJack.webm',
@@ -39,8 +39,8 @@ export const compositions: Composition[] = [
 
   {
     id: 4,
-    rating: 1,
-    author: 'Квин',
+    rating: 5,
+    author: 'Queen',
     name: 'Bohemian Rhapsody',
     genre: 'Рок',
     record: 'records/BohemianRhapsody.webm',
@@ -51,8 +51,8 @@ export const compositions: Composition[] = [
 
   {
     id: 5,
-    rating: 1,
-    author: 'Лало Шифрин',
+    rating: 6,
+    author: 'Lalo Schifrin',
     name: 'Mission Impossible',
     genre: 'Джаз',
     record: 'records/MissionImpossible.webm',
@@ -63,8 +63,8 @@ export const compositions: Composition[] = [
 
   {
     id: 6,
-    rating: 1,
-    author: 'Пинк Флойд',
+    rating: 7,
+    author: 'Pink Floyd',
     name: 'Shine On You Crazy Diamond (Part V)',
     genre: 'Рок',
     record: 'records/ShineOnYouCrazyDiamond.webm',
@@ -75,8 +75,8 @@ export const compositions: Composition[] = [
 
   {
     id: 7,
-    rating: 1,
-    author: 'Европа',
+    rating: 8,
+    author: 'Europe',
     name: 'The Final Countdown',
     genre: 'Рок',
     record: 'records/TheFinalCountdown.webm',
@@ -87,8 +87,8 @@ export const compositions: Composition[] = [
 
   {
     id: 8,
-    rating: 1,
-    author: 'Скорпионз',
+    rating: 9,
+    author: 'Scorpions',
     name: 'Still Loving You',
     genre: 'Рок',
     record: 'records/StillLovingYou.webm',

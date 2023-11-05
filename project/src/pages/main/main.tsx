@@ -2,6 +2,7 @@ import { RefObject, useEffect, useRef, useState } from 'react';
 import CompositionsList from '../../components/card-list/card-list';
 import Filter from '../../components/filter/filter';
 import { compositions } from '../../mocks/compositions';
+import Sorting from '../../components/sorting/sorting';
 
 function Main(): JSX.Element {
 
@@ -90,18 +91,7 @@ function Main(): JSX.Element {
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции ({filteredCompositions.length}).</h2>
           <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler} />
-          <div className="records__sorting sorting">
-            <label className="sorting-label" htmlFor="pet-select">Сортировка:</label>
-
-            <select className="sorting-select" name="compositions-list" id="pet-select">
-              <option className="sorting-option" value="composition">По названию композиции</option>
-              <option className="sorting-option sorting-option--active" value="author">По имени автора</option>
-              <option className="sorting-option" value="date-late">По дате записи от ранней</option>
-              <option className="sorting-option" value="date-early">По дате записи от поздней</option>
-              <option className="sorting-option" value="rating">По рейтингу</option>
-            </select>
-          </div>
-
+          <Sorting/>
           <CompositionsList compositions={filteredCompositions} />
         </section>
       </main>
