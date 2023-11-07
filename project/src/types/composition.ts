@@ -2,7 +2,7 @@ export type Composition = {
   id: number;
   rating: number;
   author: string;
-  name: string;
+  composition: string;
   genre: string;
   record: string;
   poster: string;

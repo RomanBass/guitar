@@ -1,14 +1,17 @@
-import { useState } from 'react';
-
 const sortingOptions = [
+  { value: 'rating', text: 'Начальная' },
   { value: 'composition', text: 'По названию композиции' },
   { value: 'author', text: 'По имени автора' },
-  { value: 'date-late', text: 'По дате записи' },
-  { value: 'rating', text: 'По рейтингу' },
+  // { value: 'date-late', text: 'По дате записи' },
+  // { value: 'rating', text: 'По рейтингу' },
 ];
 
-function Sorting(): JSX.Element {
-  const [selectedSortingOption, setSelectedSorting] = useState('date-late');
+type SortingProps = {
+  onChangeSorting: (arg: string) => void;
+  selectedSortingOption: string;
+}
+
+function Sorting({ onChangeSorting, selectedSortingOption}: SortingProps): JSX.Element {
 
   const sortingList = sortingOptions.map((sortingOption) => (
     <option
@@ -28,7 +31,8 @@ function Sorting(): JSX.Element {
         id="pet-select"
         value={selectedSortingOption}
         onChange={(evt) => {
-          setSelectedSorting(evt.currentTarget.value);
+          evt.preventDefault();
+          onChangeSorting(evt.currentTarget.value);
         }}
       >
         {sortingList}

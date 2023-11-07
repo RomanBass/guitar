@@ -3,9 +3,9 @@ import { Composition} from '../types/composition';
 export const compositions: Composition[] = [
   {
     id: 1,
-    rating: 2,
+    rating: 1,
     author: 'Ozzy Osbourne',
-    name: 'Goodbye To Romance',
+    composition: 'Goodbye To Romance',
     genre: 'Рок',
     record: 'records/GoodbyeToRomance.webm',
     poster: 'img/compositions/ozzy-osbourne.webp',
@@ -15,9 +15,9 @@ export const compositions: Composition[] = [
 
   {
     id: 2,
-    rating: 3,
+    rating: 2,
     author: 'Joe Zawinul',
-    name: 'Mercy Mercy Mercy',
+    composition: 'Mercy Mercy Mercy',
     genre: 'Джаз',
     record: 'records/MercyMercyMercy.webm',
     poster: 'img/compositions/joe-zawinul.webp',
@@ -27,9 +27,9 @@ export const compositions: Composition[] = [
 
   {
     id: 3,
-    rating: 4,
+    rating: 3,
     author: 'Percy Mayfield',
-    name: 'Hit the Road Jack',
+    composition: 'Hit the Road Jack',
     genre: 'Джаз',
     record: 'records/HitTheRoadJack.webm',
     poster: 'img/compositions/ray-charles.webp',
@@ -39,9 +39,9 @@ export const compositions: Composition[] = [
 
   {
     id: 4,
-    rating: 5,
+    rating: 4,
     author: 'Queen',
-    name: 'Bohemian Rhapsody',
+    composition: 'Bohemian Rhapsody',
     genre: 'Рок',
     record: 'records/BohemianRhapsody.webm',
     poster: 'img/compositions/queen.webp',
@@ -51,9 +51,9 @@ export const compositions: Composition[] = [
 
   {
     id: 5,
-    rating: 6,
+    rating: 5,
     author: 'Lalo Schifrin',
-    name: 'Mission Impossible',
+    composition: 'Mission Impossible',
     genre: 'Джаз',
     record: 'records/MissionImpossible.webm',
     poster: 'img/compositions/lalo-schifrin.webp',
@@ -63,9 +63,9 @@ export const compositions: Composition[] = [
 
   {
     id: 6,
-    rating: 7,
+    rating: 6,
     author: 'Pink Floyd',
-    name: 'Shine On You Crazy Diamond (Part V)',
+    composition: 'Shine On You Crazy Diamond (Part V)',
     genre: 'Рок',
     record: 'records/ShineOnYouCrazyDiamond.webm',
     poster: 'img/compositions/pink-floyd.webp',
@@ -75,9 +75,9 @@ export const compositions: Composition[] = [
 
   {
     id: 7,
-    rating: 8,
+    rating: 7,
     author: 'Europe',
-    name: 'The Final Countdown',
+    composition: 'The Final Countdown',
     genre: 'Рок',
     record: 'records/TheFinalCountdown.webm',
     poster: 'img/compositions/europe.webp',
@@ -87,9 +87,9 @@ export const compositions: Composition[] = [
 
   {
     id: 8,
-    rating: 9,
+    rating: 8,
     author: 'Scorpions',
-    name: 'Still Loving You',
+    composition: 'Still Loving You',
     genre: 'Рок',
     record: 'records/StillLovingYou.webm',
     poster: 'img/compositions/scorpions.webp',

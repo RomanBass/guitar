@@ -60,6 +60,24 @@ function Main(): JSX.Element {
     filteredCompositions = compositions.filter((composition) => composition.genre === selectedFilter);
   }
 
+  const [selectedSortingOption, setSelectedSorting] = useState('rating');
+
+  const sortingChangeHandler = (sortingOption: string) => {
+    setSelectedSorting(sortingOption);
+  };
+
+  if (selectedSortingOption === 'rating') {
+    filteredCompositions.sort((a, b) => a.rating > b.rating ? 1 : -1);
+  }
+
+  if (selectedSortingOption === 'composition') {
+    filteredCompositions.sort((a, b) => a.composition > b.composition ? 1 : -1);
+  }
+
+  if (selectedSortingOption === 'author') {
+    filteredCompositions.sort((a, b) => a.author > b.author ? 1 : -1);
+  }
+
   return (
     <div>
       <header className="body__header header" ref={headerRef}>
@@ -91,7 +109,7 @@ function Main(): JSX.Element {
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции ({filteredCompositions.length}).</h2>
           <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler} />
-          <Sorting/>
+          <Sorting selectedSortingOption={selectedSortingOption} onChangeSorting={sortingChangeHandler} />
           <CompositionsList compositions={filteredCompositions} />
         </section>
       </main>
