@@ -1,4 +1,5 @@
-const filterOptions = ['Все', 'Джаз', 'Рок', 'Классика'];
+// const filterOptions = ['Все', 'Джаз', 'Рок', 'Классика'];
+const filterOptions = ['Все', 'Джаз', 'Рок'];
 
 type FilterProps = {
   onChangeFilter: (arg: string) => void;

@@ -12,7 +12,7 @@ function Card({composition}: CardProps): JSX.Element {
       <video className="composition-video" controls preload="none" poster={composition.poster}>
         <source src={composition.record} type="video/webm" />
       </video>
-      <p className="composition-date visually-hidden">{composition.data}</p>
+      <p className="composition-date">{composition.date.dateForHuman}</p>
     </section>
   );
 }

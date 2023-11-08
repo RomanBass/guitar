@@ -6,7 +6,7 @@ export type Composition = {
   genre: string;
   record: string;
   poster: string;
-  data: string;
+  date: {dateForHuman: string; dateForSorting: number};
   duration: string;
 }
 

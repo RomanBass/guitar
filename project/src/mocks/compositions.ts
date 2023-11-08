@@ -9,7 +9,7 @@ export const compositions: Composition[] = [
     genre: 'Рок',
     record: 'records/GoodbyeToRomance.webm',
     poster: 'img/compositions/ozzy-osbourne.webp',
-    data: '27 августа 2023',
+    date: {dateForHuman:'27 августа 2023', dateForSorting: 20230827},
     duration: '05:30'
   },
 
@@ -21,7 +21,7 @@ export const compositions: Composition[] = [
     genre: 'Джаз',
     record: 'records/MercyMercyMercy.webm',
     poster: 'img/compositions/joe-zawinul.webp',
-    data: '08 июля 2023',
+    date: {dateForHuman:'08 июля 2023', dateForSorting: 20230708},
     duration: '03:41'
   },
 
@@ -33,7 +33,7 @@ export const compositions: Composition[] = [
     genre: 'Джаз',
     record: 'records/HitTheRoadJack.webm',
     poster: 'img/compositions/ray-charles.webp',
-    data: '08 июля 2023',
+    date: {dateForHuman:'08 июля 2023', dateForSorting: 20230708},
     duration: '02:03'
   },
 
@@ -45,7 +45,7 @@ export const compositions: Composition[] = [
     genre: 'Рок',
     record: 'records/BohemianRhapsody.webm',
     poster: 'img/compositions/queen.webp',
-    data: '19 августа 2022',
+    date: {dateForHuman:'29 августа 2022', dateForSorting: 20220829},
     duration: '05:04'
   },
 
@@ -57,7 +57,7 @@ export const compositions: Composition[] = [
     genre: 'Джаз',
     record: 'records/MissionImpossible.webm',
     poster: 'img/compositions/lalo-schifrin.webp',
-    data: '16 сентября 2022',
+    date: {dateForHuman:'16 сентября 2022', dateForSorting: 20220916},
     duration: '02:31'
   },
 
@@ -69,7 +69,7 @@ export const compositions: Composition[] = [
     genre: 'Рок',
     record: 'records/ShineOnYouCrazyDiamond.webm',
     poster: 'img/compositions/pink-floyd.webp',
-    data: '11 ноября 2022',
+    date: {dateForHuman:'11 ноября 2022', dateForSorting: 20221111},
     duration: '02:45'
   },
 
@@ -81,7 +81,7 @@ export const compositions: Composition[] = [
     genre: 'Рок',
     record: 'records/TheFinalCountdown.webm',
     poster: 'img/compositions/europe.webp',
-    data: '11 октября 2022',
+    date: {dateForHuman:'11 октября 2022', dateForSorting: 20221011},
     duration: '04:04'
   },
 
@@ -93,7 +93,7 @@ export const compositions: Composition[] = [
     genre: 'Рок',
     record: 'records/StillLovingYou.webm',
     poster: 'img/compositions/scorpions.webp',
-    data: '24 сентября 2022',
+    date: {dateForHuman:'24 сентября 2022', dateForSorting: 20220924},
     duration: '04:42'
   }
 

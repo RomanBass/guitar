@@ -78,6 +78,10 @@ function Main(): JSX.Element {
     filteredCompositions.sort((a, b) => a.author > b.author ? 1 : -1);
   }
 
+  if (selectedSortingOption === 'date-late') {
+    filteredCompositions.sort((b, a) => a.date.dateForSorting > b.date.dateForSorting ? 1 : -1);
+  }
+
   return (
     <div>
       <header className="body__header header" ref={headerRef}>

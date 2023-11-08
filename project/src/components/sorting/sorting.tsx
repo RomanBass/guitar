@@ -1,9 +1,8 @@
 const sortingOptions = [
-  { value: 'rating', text: 'Начальная' },
+  { value: 'rating', text: 'Исходная' },
   { value: 'composition', text: 'По названию композиции' },
   { value: 'author', text: 'По имени автора' },
-  // { value: 'date-late', text: 'По дате записи' },
-  // { value: 'rating', text: 'По рейтингу' },
+  { value: 'date-late', text: 'По дате записи' },
 ];
 
 type SortingProps = {
