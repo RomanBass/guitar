@@ -109,7 +109,7 @@ function Main(): JSX.Element {
         <section className="main__records records">
           <h2 className="records-title main-big-title">Композиции ({filteredCompositions.length}).</h2>
           <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler} />
-          <Sorting selectedSortingOption={selectedSortingOption} onChangeSorting={sortingChangeHandler} />
+          {filteredCompositions.length > 1 ? <Sorting selectedSortingOption={selectedSortingOption} onChangeSorting={sortingChangeHandler} /> : ''}
           <CompositionsList compositions={filteredCompositions} />
         </section>
       </main>
