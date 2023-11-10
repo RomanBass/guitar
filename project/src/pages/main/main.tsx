@@ -79,7 +79,7 @@ function Main(): JSX.Element {
   }
 
   if (selectedSortingOption === 'date-late') {
-    filteredCompositions.sort((b, a) => a.date.dateForSorting > b.date.dateForSorting ? 1 : -1);
+    filteredCompositions.sort((b, a) => a.date.dateForSorting - b.date.dateForSorting);
   }
 
   return (
