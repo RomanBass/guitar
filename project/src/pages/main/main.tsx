@@ -48,6 +48,7 @@ function Main(): JSX.Element {
     }
   }; //---
 
+  // ****************** Фильтрация ******************************* >
   const [selectedFilter, setSelectedFilter] = useState('Все');
 
   const filterChangeHandler = (filterOption: string) => {
@@ -59,7 +60,8 @@ function Main(): JSX.Element {
   if (selectedFilter !== 'Все') {
     filteredCompositions = compositions.filter((composition) => composition.genre === selectedFilter);
   }
-
+  // ****************** Фильтрация ******************************* <
+  // ****************** Сортировка ******************************* >
   const [selectedSortingOption, setSelectedSorting] = useState('rating');
 
   const sortingChangeHandler = (sortingOption: string) => {
@@ -81,6 +83,7 @@ function Main(): JSX.Element {
   if (selectedSortingOption === 'date-late') {
     filteredCompositions.sort((b, a) => a.date.dateForSorting - b.date.dateForSorting);
   }
+  // ****************** Сортировка ******************************* <
 
   return (
     <div>
