@@ -69,7 +69,7 @@ function Main(): JSX.Element {
   };
 
   if (selectedSortingOption === 'rating') {
-    filteredCompositions.sort((a, b) => a.rating > b.rating ? 1 : -1);
+    filteredCompositions.sort((b, a) => a.rating > b.rating ? 1 : -1);
   }
 
   if (selectedSortingOption === 'composition') {

@@ -2,8 +2,20 @@ import { Composition} from '../types/composition';
 
 export const compositions: Composition[] = [
   {
-    id: 1,
-    rating: 1,
+    id: 9,
+    rating: 9,
+    author: 'Frederic Chopin',
+    composition: 'Nocturne op.9 №2',
+    genre: 'Классика',
+    record: 'records/NocturneOp9Nr2.webm',
+    poster: 'img/compositions/frederic-chopin.webp',
+    date: {dateForHuman:'14 ноября 2023', dateForSorting: 20231114},
+    duration: '03:36'
+  },
+
+  {
+    id: 8,
+    rating: 8,
     author: 'Ozzy Osbourne',
     composition: 'Goodbye To Romance',
     genre: 'Рок',
@@ -14,8 +26,8 @@ export const compositions: Composition[] = [
   },
 
   {
-    id: 2,
-    rating: 2,
+    id: 7,
+    rating: 7,
     author: 'Joe Zawinul',
     composition: 'Mercy Mercy Mercy',
     genre: 'Джаз',
@@ -26,8 +38,8 @@ export const compositions: Composition[] = [
   },
 
   {
-    id: 3,
-    rating: 3,
+    id: 6,
+    rating: 6,
     author: 'Percy Mayfield',
     composition: 'Hit the Road Jack',
     genre: 'Джаз',
@@ -38,8 +50,8 @@ export const compositions: Composition[] = [
   },
 
   {
-    id: 4,
-    rating: 4,
+    id: 5,
+    rating: 5,
     author: 'Queen',
     composition: 'Bohemian Rhapsody',
     genre: 'Рок',
@@ -50,8 +62,8 @@ export const compositions: Composition[] = [
   },
 
   {
-    id: 5,
-    rating: 5,
+    id: 4,
+    rating: 4,
     author: 'Lalo Schifrin',
     composition: 'Mission Impossible',
     genre: 'Джаз',
@@ -62,8 +74,8 @@ export const compositions: Composition[] = [
   },
 
   {
-    id: 6,
-    rating: 6,
+    id: 3,
+    rating: 3,
     author: 'Pink Floyd',
     composition: 'Shine On You Crazy Diamond (Part V)',
     genre: 'Рок',
@@ -74,8 +86,8 @@ export const compositions: Composition[] = [
   },
 
   {
-    id: 7,
-    rating: 7,
+    id: 2,
+    rating: 2,
     author: 'Europe',
     composition: 'The Final Countdown',
     genre: 'Рок',
@@ -86,8 +98,8 @@ export const compositions: Composition[] = [
   },
 
   {
-    id: 8,
-    rating: 8,
+    id: 1,
+    rating: 1,
     author: 'Scorpions',
     composition: 'Still Loving You',
     genre: 'Рок',
