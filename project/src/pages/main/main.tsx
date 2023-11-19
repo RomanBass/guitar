@@ -3,6 +3,7 @@ import CompositionsList from '../../components/card-list/card-list';
 import Filter from '../../components/filter/filter';
 import { compositions } from '../../mocks/compositions';
 import Sorting from '../../components/sorting/sorting';
+import Paging from '../../components/paging/paging';
 
 function Main(): JSX.Element {
 
@@ -61,6 +62,9 @@ function Main(): JSX.Element {
     filteredCompositions = compositions.filter((composition) => composition.genre === selectedFilter);
   }
   // ****************** Фильтрация ******************************* <
+
+  //filteredCompositions = filteredCompositions.slice(4,8);
+
   // ****************** Сортировка ******************************* >
   const [selectedSortingOption, setSelectedSorting] = useState('rating');
 
@@ -118,6 +122,7 @@ function Main(): JSX.Element {
           <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler} />
           {filteredCompositions.length > 1 ? <Sorting selectedSortingOption={selectedSortingOption} onChangeSorting={sortingChangeHandler} /> : ''}
           <CompositionsList compositions={filteredCompositions} />
+          <Paging compositionsNumber={filteredCompositions.length}/>
         </section>
       </main>
 
