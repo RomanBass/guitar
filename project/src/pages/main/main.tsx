@@ -4,6 +4,9 @@ import Filter from '../../components/filter/filter';
 import { compositions } from '../../mocks/compositions';
 import Sorting from '../../components/sorting/sorting';
 import Paging from '../../components/paging/paging';
+import { Composition} from '../../types/composition';
+
+export const COMPOSITIONS_PER_PAGE = 4;
 
 function Main(): JSX.Element {
 
@@ -61,11 +64,9 @@ function Main(): JSX.Element {
   if (selectedFilter !== 'Все') {
     filteredCompositions = compositions.filter((composition) => composition.genre === selectedFilter);
   }
-  // ****************** Фильтрация ******************************* <
+  //< ****************** Фильтрация ******************************* <
 
-  //filteredCompositions = filteredCompositions.slice(4,8);
-
-  // ****************** Сортировка ******************************* >
+  //< ****************** Сортировка ******************************* >
   const [selectedSortingOption, setSelectedSorting] = useState('rating');
 
   const sortingChangeHandler = (sortingOption: string) => {
@@ -87,7 +88,15 @@ function Main(): JSX.Element {
   if (selectedSortingOption === 'date-late') {
     filteredCompositions.sort((b, a) => a.date.dateForSorting - b.date.dateForSorting);
   }
-  // ****************** Сортировка ******************************* <
+  //< ****************** Сортировка ******************************* <
+
+  //> ****************** Разбивка на страницы ********************* >
+
+  const currentPage = 1;
+  const currentCompositions: Composition[] = filteredCompositions
+    .slice((currentPage - 1) * COMPOSITIONS_PER_PAGE, currentPage * COMPOSITIONS_PER_PAGE);
+
+  //< ****************** Разбивка на страницы ********************* <
 
   return (
     <div>
@@ -121,8 +130,11 @@ function Main(): JSX.Element {
           <h2 className="records-title main-big-title">Композиции ({filteredCompositions.length}).</h2>
           <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler} />
           {filteredCompositions.length > 1 ? <Sorting selectedSortingOption={selectedSortingOption} onChangeSorting={sortingChangeHandler} /> : ''}
-          <CompositionsList compositions={filteredCompositions} />
-          <Paging compositionsNumber={filteredCompositions.length}/>
+          <CompositionsList compositions={currentCompositions} />
+          <Paging
+            compositionsNumber={filteredCompositions.length}
+            currentPage={currentPage}
+          />
         </section>
       </main>
 
