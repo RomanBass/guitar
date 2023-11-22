@@ -28,7 +28,9 @@ function Paging({compositionsNumber, currentPage, onChangePage}: PagingProps): J
         className={`paging__control button ${currentPage === firstPage ? 'paging__control--disabled' : ''}`}
         onClick={(evt) => {
           evt.preventDefault();
-          onChangePage(evt.currentTarget.value);
+          if (currentPage > firstPage) {
+            onChangePage(evt.currentTarget.value);
+          }
         }}
       >{'<'}
       </button>
@@ -39,7 +41,9 @@ function Paging({compositionsNumber, currentPage, onChangePage}: PagingProps): J
         className={`paging__control button ${currentPage === lastPage ? 'paging__control--disabled' : ''} `}
         onClick={(evt) => {
           evt.preventDefault();
-          onChangePage(evt.currentTarget.value);
+          if (currentPage < lastPage) {
+            onChangePage(evt.currentTarget.value);
+          }
         }}
       >{'>'}
       </button>

@@ -15,7 +15,7 @@ function Filter({ onChangeFilter, selectedFilter }: FilterProps): JSX.Element {
         data-filter={filterOption}
         onClick={(evt) => {
           evt.preventDefault();
-          if (evt.currentTarget.dataset.filter) {
+          if (evt.currentTarget.dataset.filter && filterOption !== selectedFilter) {
             onChangeFilter(evt.currentTarget.dataset.filter);
           }
         }}
