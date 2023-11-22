@@ -55,8 +55,12 @@ function Main(): JSX.Element {
   // ****************** Фильтрация ******************************* >
   const [selectedFilter, setSelectedFilter] = useState('Все');
 
+  const firstPage = 1; // для разбивки на страницы
+  const [currentPage, setCurrentPage] = useState(firstPage); // для разбивки на страницы
+
   const filterChangeHandler = (filterOption: string) => {
     setSelectedFilter(filterOption);
+    setCurrentPage(firstPage);
   };
 
   let filteredCompositions = compositions;
@@ -71,6 +75,7 @@ function Main(): JSX.Element {
 
   const sortingChangeHandler = (sortingOption: string) => {
     setSelectedSorting(sortingOption);
+    setCurrentPage(firstPage);
   };
 
   if (selectedSortingOption === 'rating') {
@@ -91,11 +96,25 @@ function Main(): JSX.Element {
   //< ****************** Сортировка ******************************* <
 
   //> ****************** Разбивка на страницы ********************* >
+  const compositionsNumber = Math.ceil(filteredCompositions.length);
+  const lastPage = Math.ceil(compositionsNumber / COMPOSITIONS_PER_PAGE);
 
-  const currentPage = 1;
+  const pageChangeHandler = (buttonType: string) => {
+    if (buttonType === 'first-page') {
+      setCurrentPage(firstPage);
+    }
+    if (buttonType === 'previous-page') {
+      setCurrentPage(currentPage - 1);
+    }
+    if (buttonType === 'next-page') {
+      setCurrentPage(currentPage + 1);
+    }
+    if (buttonType === 'last-page') {
+      setCurrentPage(lastPage);
+    }
+  };
   const currentCompositions: Composition[] = filteredCompositions
     .slice((currentPage - 1) * COMPOSITIONS_PER_PAGE, currentPage * COMPOSITIONS_PER_PAGE);
-
   //< ****************** Разбивка на страницы ********************* <
 
   return (
@@ -132,7 +151,8 @@ function Main(): JSX.Element {
           {filteredCompositions.length > 1 ? <Sorting selectedSortingOption={selectedSortingOption} onChangeSorting={sortingChangeHandler} /> : ''}
           <CompositionsList compositions={currentCompositions} />
           <Paging
-            compositionsNumber={filteredCompositions.length}
+            onChangePage={pageChangeHandler}
+            compositionsNumber={compositionsNumber}
             currentPage={currentPage}
           />
         </section>
