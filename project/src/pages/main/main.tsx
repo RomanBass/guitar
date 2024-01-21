@@ -129,8 +129,8 @@ function Main(): JSX.Element {
             <img className="intro-picture-1" src="img/guitar.webp" alt="Гитара" />
           </div>
           <div className="intro-content">
-            <h3 className="intro-description">Практическое применение</h3>
-            <h2 className="intro-name">Теория<br />струн</h2>
+            <h3 className="intro-description">2021 - 2024</h3>
+            <h2 className="intro-name">Дом со<br />струнами</h2>
             <h1 className="intro-name visually-hidden">Катровский Роман</h1>
 
             <button
