@@ -4,9 +4,9 @@ import Filter from '../../components/filter/filter';
 import { compositions } from '../../mocks/compositions';
 import Sorting from '../../components/sorting/sorting';
 import Paging from '../../components/paging/paging';
-import { Composition} from '../../types/composition';
+import { Composition } from '../../types/composition';
 
-export const COMPOSITIONS_PER_PAGE = 4;
+export const COMPOSITIONS_PER_PAGE = 10;
 
 function Main(): JSX.Element {
 

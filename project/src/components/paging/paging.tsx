@@ -7,15 +7,15 @@ type PagingProps = {
 }
 
 
-function Paging({compositionsNumber, currentPage, onChangePage}: PagingProps): JSX.Element {
+function Paging({ compositionsNumber, currentPage, onChangePage }: PagingProps): JSX.Element {
   const firstPage = 1;
   const lastPage = Math.ceil(compositionsNumber / COMPOSITIONS_PER_PAGE);
   return (
-    <div className={`records__paging paging ${compositionsNumber > 4 ? '' : 'visually-hidden'}`}>
+    <div className={`records__paging paging ${compositionsNumber > COMPOSITIONS_PER_PAGE ? '' : 'visually-hidden'}`}>
       <button
         value="first-page"
         type="button"
-        className={`paging__control ${currentPage === firstPage ? 'paging__control--disabled' : ''} button ${compositionsNumber > 8 ? '' : 'visually-hidden'}`}
+        className={`paging__control ${currentPage === firstPage ? 'paging__control--disabled' : ''} button ${compositionsNumber > COMPOSITIONS_PER_PAGE * 2 ? '' : 'visually-hidden'}`}
         onClick={(evt) => {
           evt.preventDefault();
           onChangePage(evt.currentTarget.value);
@@ -50,7 +50,7 @@ function Paging({compositionsNumber, currentPage, onChangePage}: PagingProps): J
       <button
         value="last-page"
         type="button"
-        className={`paging__control button ${currentPage === lastPage ? 'paging__control--disabled' : ''} ${compositionsNumber > 8 ? '' : 'visually-hidden'}`}
+        className={`paging__control button ${currentPage === lastPage ? 'paging__control--disabled' : ''} ${compositionsNumber > COMPOSITIONS_PER_PAGE * 2 ? '' : 'visually-hidden'}`}
         onClick={(evt) => {
           evt.preventDefault();
           onChangePage(evt.currentTarget.value);
