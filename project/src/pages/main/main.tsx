@@ -5,8 +5,12 @@ import { compositions } from '../../mocks/compositions';
 import Sorting from '../../components/sorting/sorting';
 import Paging from '../../components/paging/paging';
 import { Composition } from '../../types/composition';
+import { randomInteger } from '../../utils';
 
 export const COMPOSITIONS_PER_PAGE = 10;
+
+//номер случайной композиции в массиве для отображения на начальной странице
+const randomChosenCompositionIndex = randomInteger(compositions.length);
 
 function Main(): JSX.Element {
 
@@ -53,7 +57,10 @@ function Main(): JSX.Element {
   }; //---
 
   // ****************** Фильтрация ******************************* >
-  const [selectedFilter, setSelectedFilter] = useState('Все');
+  const [selectedFilter, setSelectedFilter] = useState('initialFilter');
+
+  //отфильтровывание одной случайной композиции, при загрузке страницы
+  const initialCompositions = compositions.slice(randomChosenCompositionIndex - 1, randomChosenCompositionIndex);
 
   const firstPage = 1; // для разбивки на страницы
   const [currentPage, setCurrentPage] = useState(firstPage); // для разбивки на страницы
@@ -64,7 +71,6 @@ function Main(): JSX.Element {
   };
 
   let filteredCompositions = compositions;
-
   if (selectedFilter !== 'Все') {
     filteredCompositions = compositions.filter((composition) => composition.genre === selectedFilter);
   }
@@ -146,10 +152,10 @@ function Main(): JSX.Element {
 
       <main className="page__main main">
         <section className="main__records records">
-          <h2 className="records-title main-big-title">Композиции ({filteredCompositions.length}).</h2>
+          <h2 className="records-title main-big-title">Композиции ({selectedFilter === 'initialFilter' ? compositions.length : filteredCompositions.length}).</h2>
           <Filter selectedFilter={selectedFilter} onChangeFilter={filterChangeHandler} />
           {filteredCompositions.length > 1 ? <Sorting selectedSortingOption={selectedSortingOption} onChangeSorting={sortingChangeHandler} /> : ''}
-          <CompositionsList compositions={currentCompositions} />
+          <CompositionsList compositions={selectedFilter === 'initialFilter' ? initialCompositions : currentCompositions} />
           <Paging
             onChangePage={pageChangeHandler}
             compositionsNumber={compositionsNumber}
